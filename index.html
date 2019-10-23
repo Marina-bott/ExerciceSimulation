@@ -4,37 +4,51 @@
     <meta charset="utf-8">
     <title>Ma simulation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href='./style.css'>
 </head>
 <body>
-    <h1>----- Ma Simulation -----</h1>
+    <h1>Simulation d'Emprunt</h1>
     <div class='container'>
             <div id='slide'>
-                   
-                   
-                            
-                             <label for="customRange2">J'indique le montant souhaité</label><br>
-                             <form>
-                                <div class="form-group">
-                             <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
-                              <input type="range" class="form-control-range" id="formControlRange"min="0" max="5000">
-                              <span class="font-weight-bold indigo-text ml-2 mt-1">5000</span>
+                    <label for="customRange1">J'indique le montant souhaité sur 12 mois: </label><br>
+                            <form>
+                            <div class="form-group">
+                            <span id='zero' class="font-weight-bold indigo-text mr-2 mt-1">de 1000     à      5000€ </span>
+                            <input type="range" class="form-control-range" id="formControlRange"min="1000" max="5000" step="100" value="1000" >
+                            <h2 id='valeur'></h2>
                             </div>
                             </form>
-                            
-                         
-                          
-            </div>
+         </div>
             <div id='resultats'>
-                <h2>Vos Infos Clés</h2>
-                    <p>Mensualité: </p>
-                    <p>Montant Total Du: </p>
-                    <p>TAEG*:</p>
+                <h3>Vos résultats de simulation: </h3>
+                    <p>Mensualité: <span id='mensualité'></span></p>
+                    <p>Montant Total Du: <span id='mTD'></span></p>
+                    <p>TAEG*: <span id='taeg'></span></p>
             </div>
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <div>
+        <h1>Formulaire de contact:</h1>
+        <form action="/ma-page-de-traitement" method="post">
+            <div>
+                <input type="text" id="name" name="user_name" placeholder="Nom">
+            </div>
+            <div>
+                <input type="email" id="mail" name="user_mail" placeholder="E-mail">
+            </div>
+            <div>
+                <textarea id="msg" name="user_message" placeholder="Message: "></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Contactez moi vite</button>
+          </form>
+          
+    </div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src= 'script.js'></script>
 </body>
 </html>
